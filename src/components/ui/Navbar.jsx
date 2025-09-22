@@ -16,7 +16,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="flex items-center bg-[#0E6ED8] justify-between px-6 py-4 border-b">
+    <nav className="flex items-center bg-[#0E6ED8] justify-between px-6 py-4 ">
       {/* Logo */}
       <Link href="/" className=" w-26 font-bold">
         <img
@@ -36,12 +36,12 @@ export default function Navbar() {
       <div className="md:hidden">
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
-            <Button variant="outline" className='cursor-pointer'  size="icon">
+            <Button variant="outline" className="cursor-pointer" size="icon">
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="w-64">
-            <SheetHeader className="border flex justify-center items-center">
+            <SheetHeader className=" flex justify-center items-center">
               <Link href="/" className="w-26 font-bold">
                 <img
                   src="https://skyshipbd.com/_next/static/media/logo.28c56c27.svg"
