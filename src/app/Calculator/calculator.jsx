@@ -57,8 +57,8 @@ export default function CalculatorCard() {
   const cbm = ((length * width * height) / 1000000).toFixed(4);
 
   return (
-    <div className="flex justify-around items-center bg-gradient-to-b from-blue-950 to-blue-800">
-      <div className="space-y-8">
+    <div className="flex flex-col lg:flex-row justify-around items-center bg-gradient-to-b from-blue-950 to-blue-800">
+      <div className="space-y-8 m-8 lg:m-0">
         <h1 className="text-4xl text-white">
           Calculate CBM & Shipping Charge.
         </h1>
@@ -68,7 +68,7 @@ export default function CalculatorCard() {
         </p>
       </div>
       <div>
-        <Card className="w-[500px] rounded-xl shadow-xl mt-10 mb-10 overflow-hidden">
+        <Card className="w-full lg:w-[500px] rounded-xl shadow-xl mt-10 mb-10 overflow-hidden">
           {/* Tabs */}
           <Tabs
             value={activeTab}
