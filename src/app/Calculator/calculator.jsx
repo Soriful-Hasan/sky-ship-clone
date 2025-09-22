@@ -69,7 +69,6 @@ export default function CalculatorCard() {
       </div>
       <div>
         <Card className="w-full lg:w-[500px] rounded-xl shadow-xl mt-10 mb-10 overflow-hidden">
-          {/* Tabs */}
           <Tabs
             value={activeTab}
             onValueChange={setActiveTab}
