@@ -31,5 +31,5 @@ It provides fast and reliable shipment booking services with air and sea transpo
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/skyship-shipping.git
-cd skyship-shipping
+git clone https://github.com/Soriful-Hasan/sky-ship-clone.git
+cd sky-ship-clone
