@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function page() {
-  return <div>Pricing</div>;
+  return <div className="min-h-screen">Pricing</div>;
 }

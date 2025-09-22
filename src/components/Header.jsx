@@ -5,14 +5,20 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { ChevronDown } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export default function Header() {
   const [activeTab, setActiveTab] = useState("air");
 
   return (
     <section
-      className="relative h-[90vh] flex items-center justify-center bg-cover bg-center "
+      className="relative h-[80vh] flex items-center justify-start bg-cover bg-center"
       style={{
         backgroundImage: "url('/ship-bg.jpg')",
       }}
@@ -21,17 +27,19 @@ export default function Header() {
       <div className="absolute inset-0 bg-black/50" />
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-2xl mx-auto px-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-white">
-          Fastest & Reliable Shipment at Your Door.
-        </h1>
-        <p className="mt-4 text-lg text-gray-200">
-          SkyShip offers seamless door-to-door shipping services, ensuring
-          efficient and reliable cargo transport from China to Bangladesh.
-        </p>
+      <div className="relative flex flex-col lg:ml-20 justify-start z-10 text-left w-full max-w-4xl px-4">
+        <div className="flex flex-col">
+          <h1 className="text-4xl md:text-5xl font-bold text-white">
+            Fastest & Reliable Shipment at Your Door.
+          </h1>
+          <p className="mt-4 text-lg text-gray-200">
+            SkyShip offers seamless door-to-door shipping services, ensuring
+            efficient and reliable cargo transport from China to Bangladesh.
+          </p>
+        </div>
 
         {/* Tabs */}
-        <div className="mt-6 flex justify-center space-x-4">
+        <div className="mt-6 flex justify-start space-x-4">
           <Button
             variant={activeTab === "air" ? "default" : "secondary"}
             className={cn(
@@ -55,29 +63,31 @@ export default function Header() {
         </div>
 
         {/* Booking Card */}
-        <Card className="mt-8 p-4 flex items-center space-x-3 bg-black/70 backdrop-blur text-white">
+        <Card className="mt-8 p-4 md:w-2xl flex-col flex md:flex-row items-center space-x-3 bg-black/60 backdrop-blur text-white">
           {/* From */}
-          <div className="flex items-center bg-gray-800 px-3 py-2 rounded-md">
-            <span className="mr-2">🇨🇳</span>
-            <select className="bg-transparent outline-none">
-              <option>China</option>
-              <option>USA</option>
-              <option>India</option>
-            </select>
-            <ChevronDown className="w-4 h-4 ml-1" />
+          <span className="font-semibold">From</span>
+          <div className="w-40">
+            <Select>
+              <SelectTrigger className="w-full bg-gray-800 border-none text-white">
+                <SelectValue placeholder="Select Country" />
+              </SelectTrigger>
+              <SelectContent className="bg-gray-800 text-white">
+                <SelectItem value="china">China</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
-          <span className="font-semibold">to</span>
-
           {/* To */}
-          <div className="flex items-center bg-gray-800 px-3 py-2 rounded-md">
-            <span className="mr-2">🇧🇩</span>
-            <select className="bg-transparent outline-none">
-              <option>Bangladesh</option>
-              <option>Malaysia</option>
-              <option>Singapore</option>
-            </select>
-            <ChevronDown className="w-4 h-4 ml-1" />
+          <span className="font-semibold">To</span>
+          <div className="w-40">
+            <Select>
+              <SelectTrigger className="w-full bg-gray-800 border-none text-white">
+                <SelectValue placeholder="Select Country" />
+              </SelectTrigger>
+              <SelectContent className="bg-gray-800 text-white">
+                <SelectItem value="bangladesh">Bangladesh</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
           {/* Button */}
@@ -86,18 +96,6 @@ export default function Header() {
           </Button>
         </Card>
       </div>
-      {/* zoom animation */}
-      <style jsx>{`
-        @keyframes zoom {
-          0%,
-          100% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.1);
-          }
-        }
-      `}</style>
     </section>
   );
 }
