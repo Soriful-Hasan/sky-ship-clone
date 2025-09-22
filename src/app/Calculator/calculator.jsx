@@ -76,10 +76,12 @@ export default function CalculatorCard() {
             className="w-full"
           >
             <TabsList className="grid grid-cols-2 w-full">
-              <TabsTrigger value="charge">
+              <TabsTrigger value="charge" className="cursor-pointer">
                 Shipping Charge Calculator
               </TabsTrigger>
-              <TabsTrigger value="cbm">CBM Calculator</TabsTrigger>
+              <TabsTrigger value="cbm" className="cursor-pointer">
+                CBM Calculator
+              </TabsTrigger>
             </TabsList>
 
             <CardContent className="p-6 space-y-4">
@@ -91,7 +93,7 @@ export default function CalculatorCard() {
                   <div className="w-full">
                     <Label className="text-sm font-medium">Method *</Label>
                     <Select>
-                      <SelectTrigger className="w-full">
+                      <SelectTrigger className="w-full cursor-pointer">
                         <SelectValue placeholder="* Method" />
                       </SelectTrigger>
                       <SelectContent>
@@ -105,7 +107,7 @@ export default function CalculatorCard() {
                   <div className="w-full">
                     <Label className="text-sm font-medium">Route *</Label>
                     <Select>
-                      <SelectTrigger className="w-full">
+                      <SelectTrigger className="w-full cursor-pointer">
                         <SelectValue placeholder="* Route" />
                       </SelectTrigger>
                       <SelectContent>
@@ -120,10 +122,10 @@ export default function CalculatorCard() {
                 <div className="w-full">
                   <Label className="text-sm font-medium">Category *</Label>
                   <Select onValueChange={(val) => setSelectedCategory(val)}>
-                    <SelectTrigger className="w-full">
+                    <SelectTrigger className="w-full cursor-pointer">
                       <SelectValue placeholder="* Category" />
                     </SelectTrigger>
-                    <SelectContent className="w-full">
+                    <SelectContent className="w-full ">
                       {categories.map((cat) => (
                         <SelectItem key={cat.id} value={cat.name}>
                           {cat.name} - {cat.price}
